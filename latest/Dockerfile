@@ -17,36 +17,10 @@ RUN yum -y install \
     mysql-libs \
     mod_ssl \
     php56w \
-    php56w-bcmath \
     php56w-cli \
     php56w-common \
     php56w-dba \
     php56w-devel \
-    php56w-gd \
-    php56w-imap \
-    php56w-intl \
-    php56w-ldap \
-    php56w-mbstring \
-    php56w-mcrypt \
-    php56w-mysqlnd \
-    php56w-odbc \
-    php56w-opcache \
-    php56w-pdo \
-    php56w-pear \
-    php56w-pecl-apcu \
-    php56w-pecl-gearman \
-    php56w-pecl-geoip \
-    php56w-pecl-igbinary \
-    php56w-pecl-imagick \
-    php56w-pecl-memcache \
-    php56w-pecl-redis \
-    php56w-pecl-xdebug \
-    php56w-process \
-    php56w-snmp \
-    php56w-soap \
-    php56w-tidy \
-    php56w-xml \
-    php56w-xmlrpc \
     && yum -y update bash \
     && rm -rf /var/cache/yum/* \
     && yum clean all
@@ -54,7 +28,7 @@ RUN yum -y install \
 #
 # UTC Timezone & Networking
 #
-RUN ln -sf /usr/share/zoneinfo/UTC /etc/localtime \
+RUN ln -sf /usr/share/zoneinfo/PST /etc/localtime \
     && echo "NETWORKING=yes" > /etc/sysconfig/network
 
 
