@@ -68,6 +68,7 @@ ENTRYPOINT ["jenkins-slave"]
 #
 # Purge
 #
+USER root 
 
 RUN rm -rf /sbin/sln \
     ; rm -rf /usr/{{lib,share}/locale,share/{man,doc,info,gnome/help,cracklib,il8n},{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
