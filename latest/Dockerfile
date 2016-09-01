@@ -1,17 +1,18 @@
 FROM centos:7
 
-MAINTAINER nickma <nick.maiorsky@shipwire.com>
+MAINTAINER Nick Maiorsky <nick.maiorsky@shipwire.com>
 
 #
 # Import the Centos-7 RPM GPG key to prevent warnings and Add EPEL Repository
 #
 RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 \
     && rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \
-    && rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-7.noarch.rpm \
-	&& rpm -Uvh 
-
+	&& rpm --import https://mirror.webtatic.com/yum/RPM-GPG-KEY-webtatic-el7 \
+	&& rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
+	&& rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm 
 
 RUN yum -y install \
+    jdk \
     boost-devel \
     mysql-devel \
     mysql-libs \
@@ -36,14 +37,15 @@ RUN ln -sf /usr/share/zoneinfo/PST /etc/localtime \
 # Global PHP configuration changes
 #
 RUN sed -i \
-    -e 's~^;date.timezone =$~date.timezone = Europe/Rome~g' \
+    -e 's~^;date.timezone =$~date.timezone = America/Los_Angeles~g' \
     -e 's~^;user_ini.filename =$~user_ini.filename =~g' \
-    -e 's~^sendmail_path = /usr/sbin/sendmail -t -i$~sendmail_path = /usr/bin/msmtp -C /etc/msmtprc -t -i~g' \
     /etc/php.ini
 
 #
 # Jenkins Slave
 #
+
+USER root
 
 ENV HOME /home/jenkins
 RUN useradd -c "Jenkins user" -d $HOME -m jenkins
