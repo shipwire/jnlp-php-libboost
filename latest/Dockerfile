@@ -11,7 +11,8 @@ RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 \
 	&& rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
 	&& rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm 
 
-RUN yum -y install \
+RUN yum -y install \ 
+    java \
     jdk \
     boost-devel \
     mysql-devel \
