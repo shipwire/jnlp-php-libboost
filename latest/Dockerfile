@@ -63,7 +63,7 @@ VOLUME /home/jenkins
 WORKDIR /home/jenkins
 USER jenkins
 
-ENTRYPOINT ["jenkins-slave"]
+ENTRYPOINT ["/usr/local/bin/jenkins-slave"]
 
 
 #
