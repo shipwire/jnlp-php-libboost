@@ -46,8 +46,6 @@ RUN sed -i \
 # Jenkins Slave
 #
 
-USER root
-
 ENV HOME /home/jenkins
 RUN useradd -c "Jenkins user" -d $HOME -m jenkins
 
@@ -69,7 +67,6 @@ USER jenkins
 RUN echo $PATH
 
 ENTRYPOINT ["jenkins-slave"]
-
 
 #
 # Purge
