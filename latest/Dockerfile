@@ -23,9 +23,26 @@ RUN yum -y install \
     php56w-common \
     php56w-dba \
     php56w-devel \
+	&& yum -y group install "Development Tools" \ 
     && yum -y update bash \
     && rm -rf /var/cache/yum/* \
     && yum clean all
+
+
+#
+# Install Xerces
+#
+
+USER root
+
+ENV XERCES_VERSION=3.1.4
+RUN curl -sSLo /tmp/xerces-c.tar.gz http://www.gtlib.gatech.edu/pub/apache//xerces/c/3/sources/xerces-c-${XERCES_VERSION}.tar.gz \
+  && cd /tmp \
+  && tar xvzf xerces-c.tar.gz \
+  && cd xerces-c-${XERCES_VERSION} \
+  && ./configure --disable-network --disable-threads CFLAGS="-g -O2 -fPIC" CXXFLAGS="-g -O2 -msse2 -fPIC" \
+  && make \
+  && make install
 
 #
 # UTC Timezone & Networking
