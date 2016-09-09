@@ -23,7 +23,8 @@ RUN yum -y install \
     php56w-common \
     php56w-dba \
     php56w-devel \
-	&& yum -y group install "Development Tools" \ 
+    cmake \
+    && yum -y group install "Development Tools" \ 
     && yum -y update bash \
     && rm -rf /var/cache/yum/* \
     && yum clean all
