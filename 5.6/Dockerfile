@@ -14,6 +14,8 @@ RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 \
 RUN yum -y install \ 
     java \
     jdk \
+    boost boost-devel \
+    boost-doc \
     boost-devel \
     mysql-devel \
     mysql-libs \
