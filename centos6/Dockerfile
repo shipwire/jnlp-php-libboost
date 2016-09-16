@@ -1,4 +1,4 @@
-FROM centos:6.5
+FROM centos:6.6
 
 MAINTAINER Nick Maiorsky <nick.maiorsky@shipwire.com>
 
