@@ -1,6 +1,6 @@
 FROM centos:7
 
-MAINTAINER Nick Maiorsky <nick.maiorsky@shipwire.com>
+MAINTAINER Nick Maiorsky <nicolay.maiorsky@ingrammicro.com>
 
 #
 # Import the Centos-7 RPM GPG key to prevent warnings and Add EPEL Repository
