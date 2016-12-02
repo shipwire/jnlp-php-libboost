@@ -9,8 +9,7 @@ RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 \
     && rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \
 	&& rpm --import https://mirror.webtatic.com/yum/RPM-GPG-KEY-webtatic-el7 \
 	&& rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
-	&& rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm \
-	&& rpm -Uvh https://mirror.webtatic.com/yum/el7-testing/webtatic-release.rpm
+	&& rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 RUN yum -y install \ 
     java \
