@@ -9,7 +9,7 @@ RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6 \
     && rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6 \
 	&& rpm --import https://mirror.webtatic.com/yum/RPM-GPG-KEY-webtatic-el6 \
 	&& rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm \
-	&& rpm -Uvh https://mirror.webtatic.com/yum/el6/webtatic-release.rpm 
+	&& rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm 
 
 RUN yum -y install \ 
     java \
