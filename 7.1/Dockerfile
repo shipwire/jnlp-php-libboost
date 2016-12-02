@@ -18,11 +18,11 @@ RUN yum -y install \
     mysql-devel \
     mysql-libs \
     mod_ssl \
-    php71w \
-    php71w-cli \
-    php71w-common \
-    php71w-dba \
-    php71w-devel \
+    php70w \
+    php70w-cli \
+    php70w-common \
+    php70w-dba \
+    php70w-devel \
     cmake \
     && yum -y group install "Development Tools" \ 
     && yum -y update bash \
