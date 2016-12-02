@@ -5,11 +5,11 @@ MAINTAINER Nick Maiorsky <nick.maiorsky@shipwire.com>
 #
 # Import the Centos-7 RPM GPG key to prevent warnings and Add EPEL Repository
 #
-RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 \
-    && rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \
-	&& rpm --import https://mirror.webtatic.com/yum/RPM-GPG-KEY-webtatic-el7 \
-	&& rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
-	&& rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm 
+RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6 \
+    && rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6 \
+	&& rpm --import https://mirror.webtatic.com/yum/RPM-GPG-KEY-webtatic-el6 \
+	&& rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm \
+	&& rpm -Uvh https://mirror.webtatic.com/yum/el6/webtatic-release.rpm 
 
 RUN yum -y install \ 
     java \
