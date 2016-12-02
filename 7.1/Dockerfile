@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:6.6
 
 MAINTAINER Nick Maiorsky <nick.maiorsky@shipwire.com>
 
@@ -18,11 +18,11 @@ RUN yum -y install \
     mysql-devel \
     mysql-libs \
     mod_ssl \
-    php71w \
-    php71w-cli \
-    php71w-common \
-    php71w-dba \
-    php71w-devel \
+    php56w \
+    php56w-cli \
+    php56w-common \
+    php56w-dba \
+    php56w-devel \
     cmake \
     && yum -y group install "Development Tools" \ 
     && yum -y update bash \
