@@ -24,7 +24,7 @@ RUN yum -y install \
     php70w-dba \
     php70w-devel \
     cmake \
-    && yum -y group install "Development Tools" \ 
+    && yum -y groupinstall "Development Tools" \ 
     && yum -y update bash \
     && rm -rf /var/cache/yum/* \
     && yum clean all
